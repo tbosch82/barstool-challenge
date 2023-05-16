@@ -1,0 +1,35 @@
+.box-score-footer {
+  display: flex;
+  flex: 1;
+  border-top: 1px solid var(--border);
+}
+
+.footer-name {
+  padding: calc(3 * var(--spacing));
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.right-border {
+  border-right: 1px solid var(--border);
+}
+
+.left-border {
+  border-left: 1px solid var(--border);
+}
+
+.footer-name-wrapper {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-status-wrapper {
+  display: flex;
+  flex: 0;
+  align-items: center;
+  justify-content: center;
+  padding: calc(3 * var(--spacing));
+  font-size: 16px;
+}

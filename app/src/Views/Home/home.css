@@ -1,0 +1,7 @@
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 1;
+  gap: calc(3 * var(--spacing));
+}

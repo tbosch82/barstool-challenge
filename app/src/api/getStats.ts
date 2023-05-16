@@ -1,8 +1,8 @@
+import { API_ENDPOINT, API_ROOT } from "../config/constants";
 import { Leagues } from "../config/leagueConfigs";
 
 export const getStats = async (league: Leagues) => {
-  console.log("HERE");
   return await (
-    await fetch(`http://localhost:3000/stats?sport=${league}`)
+    await fetch(`${API_ROOT}/${API_ENDPOINT}?sport=${league}`)
   ).json();
 };

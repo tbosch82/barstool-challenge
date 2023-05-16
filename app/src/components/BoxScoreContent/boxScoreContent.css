@@ -1,0 +1,77 @@
+.name-group {
+  display: flex;
+  flex-direction: column;
+  flex: 0;
+  text-align: center;
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.name-header {
+  padding: var(--spacing);
+  border-bottom: 1px solid var(--border);
+  background-color: var(--header-background);
+  border-radius: 4px 0 0 0;
+}
+
+.name {
+  padding: var(--spacing);
+}
+
+.padded-text {
+  padding: var(--spacing);
+}
+
+.period-group-header {
+  width: 100%;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--header-background);
+}
+
+.stat-group .period-group:last-child .period-group-header {
+  border-radius: 0 4px 0 0;
+}
+
+.period-group-content {
+  width: 100%;
+  text-align: center;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.period-group {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  flex: 1;
+}
+
+.score-group {
+  display: flex;
+  justify-content: space-evenly;
+  flex: 1;
+  border-left: 1px solid var(--border);
+}
+
+.stat-group {
+  display: flex;
+  justify-content: space-evenly;
+  border-left: 1px solid var(--border);
+}
+
+.box-score-content {
+  display: flex;
+}
+
+.team-group {
+  display: flex;
+}

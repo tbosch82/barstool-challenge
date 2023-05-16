@@ -7,49 +7,42 @@ type LeagueConfigs = {
     stats?: {
       [k: string]: {
         label: string;
-        homeValue: (data: any) => number;
-        awayValue: (data: any) => number;
+        homeValue: (data: any) => string;
+        awayValue: (data: any) => string;
       };
     };
   };
 };
 
-// leagueConfigs can be extended to include future leagues
+// leagueConfigs can be extended to include additional leagues
 export const leagueConfigs: LeagueConfigs = {
   mlb: {
     stats: {
       runs: {
         label: "R",
-        homeValue: (data: any) =>
-          data.home_period_scores.reduce(
-            (acc: number, curr: number) => acc + curr,
-            0
-          ),
-        awayValue: (data: any) =>
-          data.away_period_scores.reduce(
-            (acc: number, curr: number) => acc + curr,
-            0
-          ),
+        homeValue: (data: any) => `${data.home_batter_totals.runs ?? "-"}`,
+        awayValue: (data: any) => `${data.away_batter_totals.runs ?? "-"}`,
       },
       hits: {
         label: "H",
-        homeValue: (data: any) =>
-          data.home_batters.reduce(
-            (acc: any, curr: number) => acc.hits + curr,
-            0
-          ),
-        awayValue: (data: any) =>
-          data.away_batters.reduce(
-            (acc: any, curr: number) => acc.hits + curr,
-            0
-          ),
+        homeValue: (data: any) => `${data.home_batter_totals.hits ?? "-"}`,
+        awayValue: (data: any) => `${data.away_batter_totals.hits ?? "-"}`,
       },
       errors: {
         label: "E",
-        homeValue: (data: any) => data.home_errors,
-        awayValue: (data: any) => data.away_errors,
+        homeValue: (data: any) => data.home_errors ?? "-",
+        awayValue: (data: any) => data.away_errors ?? "-",
       },
     },
   },
-  nba: { maxPeriod: 4 },
+  nba: {
+    maxPeriod: 4,
+    stats: {
+      total: {
+        label: "T",
+        homeValue: (data: any) => `${data.home_totals.points ?? "-"}`,
+        awayValue: (data: any) => `${data.away_totals.points ?? "-"}`,
+      },
+    },
+  },
 };
